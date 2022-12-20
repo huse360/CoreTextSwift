@@ -43,7 +43,8 @@ public enum FontManager {
   ///   - fontURL: The font URL.
   ///   - scope: Scope constant defining the availability and lifetime of the registration. See CTFontManagerScope for values to pass for this parameter.
   /// - Throws: An error in case of failed registration
-  public static func registerFont(fontURL: URL, scope: CTFontManagerScope = .user) throws {
+    @available(iOS 13.0, *)
+    public static func registerFont(fontURL: URL, scope: CTFontManagerScope = .user) throws {
     guard let error = CFErrorCreate(nil, kCFErrorDomainPOSIX, 0, nil) else {
       return
     }
@@ -56,7 +57,8 @@ public enum FontManager {
   }
 
   /// Unregisters fonts from the specified font URL with the Font Manager. Unregistered fonts are no longer discoverable through font descriptor matching.
-  public static func unregisterFonts(fontURL: URL, scope: CTFontManagerScope = .user) throws {
+    @available(iOS 13.0, *)
+    public static func unregisterFonts(fontURL: URL, scope: CTFontManagerScope = .user) throws {
     guard let error = CFErrorCreate(nil, kCFErrorDomainPOSIX, 0, nil) else {
       return
     }

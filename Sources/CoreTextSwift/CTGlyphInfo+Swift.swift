@@ -24,7 +24,8 @@ extension  CTGlyphInfo {
     CTGlyphInfoGetCharacterCollection(self)
   }
 
-  public var glyph: CGGlyph {
+    @available(iOS 13.0, *)
+    public var glyph: CGGlyph {
     CTGlyphInfoGetGlyph(self)
   }
 
